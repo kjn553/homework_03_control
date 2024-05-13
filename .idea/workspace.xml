@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ae29bbb7-dad6-42de-a1da-ba0f37fc8468" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Task1_agoToText.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Task1_agoToText.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Task2_improvedCommission.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Task2_improvedCommission.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

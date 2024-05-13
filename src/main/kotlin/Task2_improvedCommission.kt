@@ -5,15 +5,14 @@ fun main() {
     val cardType2 = "VISA"
     val cardType3 = "MIR"
     val cardType4 = "MAESTRO"
-    val previousTransfersThisMonth = 20_000.0
-    val transferAmount = 10_000.0
+    val previousTransfersThisMonth = 200_000.0
+    val transferAmount = 100_000.0
     println(calculateCommission(cardType1, previousTransfersThisMonth, transferAmount))
     println(calculateCommission(cardType2, previousTransfersThisMonth, transferAmount))
     println(calculateCommission(cardType3, previousTransfersThisMonth, transferAmount))
     println(calculateCommission(cardType4, previousTransfersThisMonth, transferAmount))
 }
-
-fun calculateCommission(cardType: String, previousTransfersThisMonth: Double, transferAmount: Double): String {
+fun calculateCommission(cardType: String, previousTransfersThisMonth: Double = 0.0, transferAmount: Double = 0.0): String {
     val dailyLimit = 150_000.0
     val monthlyLimit = 600_000.0
     var result = ""
@@ -21,13 +20,13 @@ fun calculateCommission(cardType: String, previousTransfersThisMonth: Double, tr
         transferAmount > dailyLimit || previousTransfersThisMonth + transferAmount > monthlyLimit -> {
             result = "${cardType}: Превышен лимит переводов. Транзакция заблокирована."
         }
-         cardType == "MASTERCARD" -> {
+        cardType == "MASTERCARD" -> {
             val monthlyLimitNoCommission = 75000.0
             if (previousTransfersThisMonth + transferAmount <= monthlyLimitNoCommission) {
                 result = "${cardType}: 0 рублей."
             } else {
                 val exceededAmount = (previousTransfersThisMonth + transferAmount) - monthlyLimitNoCommission
-                result = "${cardType}: ${exceededAmount * 0.006 + 20} рублей."
+                result = "${cardType}: ${transferAmount * 0.006 + 20} рублей."
             }
         }
         cardType == "VISA" -> {
